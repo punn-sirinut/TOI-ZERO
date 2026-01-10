@@ -1,0 +1,4 @@
+x=input().split(" ")
+p=int(input())
+print(2*(int(x[0])+int(x[1]))*int(x[2]))
+print(2*(int(x[0])+int(x[1]))*int(x[2])*p)

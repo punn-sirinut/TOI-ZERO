@@ -1,0 +1,44 @@
+ar,ac=input().split(" ")
+ar,ac=int(ar),int(ac)
+kr,kc=input().split(" ")
+kr,kc=int(kr),int(kc)
+n=int(input())
+cnt=0
+p_100=[]
+p_60=[]
+p_20=[]
+p_0=[]
+for i in range(n):
+    r,c=input().split(" ")
+    r,c=int(r),int(c)
+    p_100.append([r,c])
+for j in range(n):
+    [r,c]=p_100[j]
+    for a in range(ar):
+        for b in range(ac):
+            if [a,b] in p_100:
+                cnt+=1
+            elif[a,b]==[r+1,c+1]or[a,b]==[r+1,c-1]or[a,b]==[r-1,c+1]or[a,b]==[r-1,c-1]or[a,b]==[r,c+1]or[a,b]==[r,c-1]or[a,b]==[r+1,c]or[a,b]==[r-1,c]:
+                p_60.append([a,b])
+            elif[a,b]==[r+2,c]or[a,b]==[r-2,c]or[a,b]==[r,c+2]or[a,b]==[r,c-2]or[a,b]==[r+1,c+2]or[a,b]==[r+1,c-2]or[a,b]==[r-1,c+2]or[a,b]==[r-1,c-2]or[a,b]==[r+2,c+1]or[a,b]==[r+2,c-1]or[a,b]==[r-2,c+1]or[a,b]==[r-2,c-1]or[a,b]==[r+2,c+2]or[a,b]==[r+2,c-2]or[a,b]==[r-2,c+2]or[a,b]==[r-2,c-2]:
+                p_20.append([a,b])
+            else:
+                p_0.append([a,b])
+for c in range(len(p_0)):
+    if p_0[c]in p_100 or p_0[c]in p_60 or p_0[c]in p_20:
+        p_0.remove(p_0[c])
+for d in range(len(p_20)):
+    if p_20[d]in p_100 or p_20[d]in p_60:
+        p_20.remove(p_20[d])
+for e in range(len(p_60)):
+    if p_60[e]in p_100 :
+        p_60.remove(p_60[e])
+print(len(p_0))
+if[kr,kc]in p_100:
+    print("100%")
+elif[kr,kc]in p_60:
+    print("60%")
+elif[kr,kc]in p_20:
+    print("20%")
+else:
+    print("0%")

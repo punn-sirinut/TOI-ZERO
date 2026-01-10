@@ -1,0 +1,5 @@
+f_n=input()
+l_n=input()
+age=input()
+if(len(f_n)>5 and len(l_n)>5):print(f_n[0:2]+l_n[-1]+age[-1])
+else:print(f_n[0]+age+l_n[-1])

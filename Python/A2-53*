@@ -1,0 +1,15 @@
+s=str(input())
+ASCII_f=ord(s[0])
+ASCII_l=ord(s[-1])
+n=[0,1,2,3,4,5,6,7,8,9] #ค่าประจำหลัก
+for i in range(10):
+    if (n[i]+1)%2==1:
+        n[i]=n[i]+ASCII_f
+    else:
+        n[i]=ASCII_l-n[i]
+l=len(s)
+for j in range(10):
+    n[j]=n[j]%l
+for k in range(10):
+    n[k]=n[k]%10
+print(f"{n[0]} {n[1]} {n[2]} {n[3]} {n[4]} {n[5]} {n[6]} {n[7]} {n[8]} {n[9]}")
